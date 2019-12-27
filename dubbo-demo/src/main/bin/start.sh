@@ -15,12 +15,12 @@ if [ -z "${SERVER_NAME}" ]; then
 	exit 1
 fi
 
-PIDS=`ps  --no-heading -C java -f --width 1000 | grep "${CONF_DIR}" |awk '{print $2}'`
-if [ -n "${PIDS}" ]; then
-    echo "ERROR: The ${SERVER_NAME} already started!"
-    echo "PID: ${PIDS}"
-    exit 1
-fi
+#PIDS=`ps  --no-heading -C java -f --width 1000 | grep "${CONF_DIR}" |awk '{print $2}'`
+#if [ -n "${PIDS}" ]; then
+#    echo "ERROR: The ${SERVER_NAME} already started!"
+#    echo "PID: ${PIDS}"
+#    exit 1
+#fi
 
 if [ -n "${SERVER_PORT}" ]; then
 	SERVER_PORT_COUNT=`netstat -ntl | grep ${SERVER_PORT} | wc -l`
